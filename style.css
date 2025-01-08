@@ -1,0 +1,175 @@
+.container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    overflow: hidden; 
+}
+.myphoto {
+    width: 120px;
+    border-radius: 9999px;
+}
+.photo {
+    text-align: center;
+}
+.name {
+    text-align: center;
+}
+.name h1 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #006fb5;  
+    font-family: 'Courier New', Courier, monospace; 
+    letter-spacing: 0; 
+    width: 5ch;  
+    animation: typing 2s steps(5, end), blink 0.8s step-end infinite;  
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 5ch; } 
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #006fb5; } 
+}
+
+.name h1.finished {
+    border-right: 2px solid transparent;  
+    animation: none;  
+}
+h1 {
+    font-family: sans-serif;
+    color: #434242;
+    font-size: 28px;
+}
+.info {
+    color: #3d3d3d;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+}
+.button{
+    display: block;
+    border: 1px solid #3d3d3d;
+    padding: 20px;
+    text-align: center;
+    margin: 30px 0;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 4px; 
+}
+.button a {
+    color: #3d3d3d;
+    text-decoration: none;
+    font-size: 19px;
+    letter-spacing: 4px;
+}
+.icon{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 60px;
+}
+body{
+    height: 2000px;
+}
+.top {
+    position: fixed;
+    display: block;
+    right: 50px;
+    bottom: 50px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: rgb(203, 203, 203);
+    text-align: center;
+    padding-top: 30px;
+    padding-left: 3px;
+    box-sizing: border-box;
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: 10%;
+}
+.box{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(174, 156, 133);
+}
+
+.works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    
+}
+
+.work-item {
+    overflow: hidden;
+    line-height: 0; 
+    position: relative;
+}
+
+.work-item img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1; 
+    object-fit: cover; 
+    transition: transform 0.3s ease, filter 0.3s ease; 
+}
+.work-item img:hover{
+    transform: scale(1.2);
+    filter: grayscale(100%);
+}
+
+.falling-images {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: -1; 
+}
+
+.falling-images {
+    position: fixed;  /* 固定在視窗上 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  /* 防止影響其他元素的互動 */
+    z-index: -1;  /* 使其位於背景 */
+}
+
+.falling-images img {
+    position: absolute;
+    top: -100px;  /* 從頁面最上方開始 */
+    opacity: 0;
+    width: calc(30px + 70px * var(--random-size)); /* 隨機大小 */
+    animation: fall linear infinite;
+    animation-duration: calc(4s + 3s * var(--random-duration)); /* 隨機下落時間 */
+    left: calc(100vw * var(--random-position)); /* 隨機水平位置 */
+    animation-delay: calc(1s * var(--random-delay)); /* 隨機延遲 */
+    transform: rotate(calc(360deg * var(--random-rotate))); /* 隨機旋轉 */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);  /* 起始位置，從最上面開始 */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(calc(360deg * var(--random-rotate))) scale(0.8); /* 到達頁面底部 */
+        opacity: 0;
+    }
+}
+
+
