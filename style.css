@@ -140,34 +140,34 @@ body{
 }
 
 .falling-images {
-    position: fixed;  /* 固定在視窗上 */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;  /* 防止影響其他元素的互動 */
-    z-index: -1;  /* 使其位於背景 */
+    pointer-events: none; 
+    z-index: -1; 
 }
 
 .falling-images img {
     position: absolute;
-    top: -100px;  /* 從頁面最上方開始 */
+    top: -100px;  
     opacity: 0;
-    width: calc(30px + 70px * var(--random-size)); /* 隨機大小 */
+    width: calc(30px + 70px * var(--random-size)); 
     animation: fall linear infinite;
-    animation-duration: calc(4s + 3s * var(--random-duration)); /* 隨機下落時間 */
-    left: calc(100vw * var(--random-position)); /* 隨機水平位置 */
-    animation-delay: calc(1s * var(--random-delay)); /* 隨機延遲 */
-    transform: rotate(calc(360deg * var(--random-rotate))); /* 隨機旋轉 */
+    animation-duration: calc(4s + 3s * var(--random-duration)); 
+    left: calc(100vw * var(--random-position)); 
+    animation-delay: calc(1s * var(--random-delay)); 
+    transform: rotate(calc(360deg * var(--random-rotate))); 
 }
 
 @keyframes fall {
     0% {
-        transform: translateY(0) rotate(0deg) scale(1);  /* 起始位置，從最上面開始 */
+        transform: translateY(0) rotate(0deg) scale(1);  
         opacity: 1;
     }
     100% {
-        transform: translateY(100vh) rotate(calc(360deg * var(--random-rotate))) scale(0.8); /* 到達頁面底部 */
+        transform: translateY(100vh) rotate(calc(360deg * var(--random-rotate))) scale(0.8); 
         opacity: 0;
     }
 }
