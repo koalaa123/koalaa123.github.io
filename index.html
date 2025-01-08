@@ -133,16 +133,14 @@
         <img src="8.png" alt="falling image">
         <img src="9.png" alt="falling image">
     </div>
-
     <script>
-        // 為每個 img 元素設置隨機屬性
         const images = document.querySelectorAll('.falling-images img');
         images.forEach(img => {
-            img.style.setProperty('--random-duration', Math.random().toFixed(2)); // 隨機時間增量
-            img.style.setProperty('--random-position', Math.random().toFixed(2)); // 隨機水平位置
-            img.style.setProperty('--random-delay', Math.random().toFixed(2)); // 隨機延遲
-            img.style.setProperty('--random-rotate', Math.random().toFixed(2)); // 隨機旋轉角度
-            img.style.setProperty('--random-size', Math.random().toFixed(2)); // 隨機圖片大小
+            img.style.setProperty('--random-duration', Math.random().toFixed(2)); 
+            img.style.setProperty('--random-position', Math.random().toFixed(2)); 
+            img.style.setProperty('--random-delay', Math.random().toFixed(2)); 
+            img.style.setProperty('--random-rotate', Math.random().toFixed(2));
+            img.style.setProperty('--random-size', Math.random().toFixed(2)); 
         });
     </script>
 </body>
